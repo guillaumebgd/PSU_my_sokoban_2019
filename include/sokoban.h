@@ -19,6 +19,7 @@ typedef struct map_stats_s {
 int init_map_stats(map_stats_t *);
 
 void get_map(char const *, map_stats_t *);
+void allocate_maps(char *, map_stats_t *);
 void check_map_and_lines(char *, int *);
 
 void sokoban(map_stats_t *);
