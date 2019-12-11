@@ -5,12 +5,12 @@
 ** mimics the game sokoban
 */
 
+#include "sokoban.h"
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "sokoban.h"
 
 static void allocate_each_line(char *first_map, map_stats_t *map_stats)
 {
