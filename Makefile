@@ -7,6 +7,12 @@
 
 SRCDEST	=	./src/
 
+LIBMY	=	./lib/my/
+
+TESTDIR	=	./tests/
+
+VALTEST	=	./map_test
+
 SRC		=	$(SRCDEST)init_map_stats.c				\
 			$(SRCDEST)usage.c						\
 			$(SRCDEST)get_map.c						\
@@ -22,15 +28,9 @@ SYMB	=	$(CFLAGS) -g
 
 NAME	=	my_sokoban
 
-LIBMY	=	./lib/my/
-
 LDFLAGS	=	-lmy -lncurses
 
-TESTDIR	=	./tests/
-
 CRIT	=	--coverage -lcriterion
-
-VALTEST	=	./map_test
 
 libs:
 	$(MAKE) -C $(LIBMY)
