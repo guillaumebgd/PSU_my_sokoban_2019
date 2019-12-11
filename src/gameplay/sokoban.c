@@ -17,7 +17,7 @@ static void display_map(map_stats_t *map_stats, int *close)
         printw(map_stats->map[i]);
         i += 1;
     }
-    get_input(close);
+    get_input(map_stats, close);
 }
 
 void sokoban(map_stats_t *map_stats)

@@ -14,7 +14,9 @@ void free_resources(map_stats_t map_stats)
 
     while (i < map_stats.map_lines) {
         free(map_stats.map[i]);
+        free(map_stats.obs_pos[i]);
         i += 1;
     }
     free(map_stats.map);
+    free(map_stats.obs_pos);
 }

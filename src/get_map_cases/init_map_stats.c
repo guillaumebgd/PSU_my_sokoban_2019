@@ -6,10 +6,15 @@
 */
 
 #include "sokoban.h"
-#include <stddef.h>
+#include <stdlib.h>
 
-void init_map_stats(map_stats_t *map_stats)
+int init_map_stats(map_stats_t *map_stats)
 {
     map_stats->map = NULL;
+    map_stats->obs_pos = NULL;
+    map_stats->player_pos = malloc(sizeof(int) * 2);
+    if (map_stats->player_pos == NULL)
+        return (84);
     map_stats->map_lines = 0;
+    return (0);
 }

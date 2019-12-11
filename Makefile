@@ -19,6 +19,11 @@ SRC		=	$(SRCDEST)get_map_cases/init_map_stats.c	\
 			$(SRCDEST)get_map_cases/get_map.c			\
 			$(SRCDEST)error_handling/impossible_games.c	\
 			$(SRCDEST)gameplay/get_input.c				\
+			$(SRCDEST)gameplay/swap_char.c				\
+			$(SRCDEST)gameplay/move_left.c				\
+			$(SRCDEST)gameplay/move_right.c				\
+			$(SRCDEST)gameplay/move_up.c				\
+			$(SRCDEST)gameplay/move_down.c				\
 			$(SRCDEST)gameplay/sokoban.c				\
 			$(SRCDEST)end_game/free_resources.c
 

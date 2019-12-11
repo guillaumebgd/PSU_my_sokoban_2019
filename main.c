@@ -20,7 +20,8 @@ int main(int ac, char **av, char **env)
         usage();
         return (0);
     }
-    init_map_stats(&map_stats);
+    if (init_map_stats(&map_stats) == 84)
+        return (84);
     get_map(av[1], &map_stats);
     sokoban(&map_stats);
     free_resources(map_stats);

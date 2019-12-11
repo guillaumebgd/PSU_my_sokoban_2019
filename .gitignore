@@ -4,3 +4,8 @@
 .vscode
 map_test
 my_sokoban
+big_map
+map_down
+map_up
+map_left
+map_right
