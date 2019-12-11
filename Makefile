@@ -11,7 +11,7 @@ LIBMY	=	./lib/my/
 
 TESTDIR	=	./tests/
 
-VALTEST	=	./map_test
+VALTEST	=	./big_map
 
 SRC		=	$(SRCDEST)get_map_cases/init_map_stats.c	\
 			$(SRCDEST)error_handling/usage.c			\
