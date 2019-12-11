@@ -20,6 +20,7 @@ void get_map(char const *, map_stats_t *);
 void check_map_and_lines(char *, int *);
 
 void sokoban(map_stats_t *);
+void get_input(int *);
 
 void error_handler(void);
 void usage();

@@ -12,8 +12,6 @@
 #include <stdlib.h>
 #include "sokoban.h"
 
-#include <stdio.h>
-
 static void allocate_each_line(char *first_map, map_stats_t *map_stats)
 {
     int offset = 0;

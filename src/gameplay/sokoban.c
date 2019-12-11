@@ -9,30 +9,6 @@
 #include "sokoban.h"
 #include "my.h"
 
-static void get_input(int *close)
-{
-    switch (getch()) {
-        case KEY_UP:
-            clear();
-            break;
-        case KEY_DOWN:
-            clear();
-            break;
-        case KEY_LEFT:
-            clear();
-            break;
-        case KEY_RIGHT:
-            clear();
-            break;
-        case ' ':
-            (*close) = 1;
-            break;
-        default:
-            refresh();
-            break;
-    }
-}
-
 static void display_map(map_stats_t *map_stats, int *close)
 {
     int i = 0;

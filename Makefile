@@ -13,12 +13,14 @@ TESTDIR	=	./tests/
 
 VALTEST	=	./map_test
 
-SRC		=	$(SRCDEST)init_map_stats.c				\
-			$(SRCDEST)usage.c						\
-			$(SRCDEST)get_map.c						\
-			$(SRCDEST)impossible_games.c			\
-			$(SRCDEST)sokoban.c						\
-			$(SRCDEST)free_resources.c
+SRC		=	$(SRCDEST)get_map_cases/init_map_stats.c	\
+			$(SRCDEST)error_handling/usage.c			\
+			$(SRCDEST)error_handling/error_handler.c	\
+			$(SRCDEST)get_map_cases/get_map.c			\
+			$(SRCDEST)error_handling/impossible_games.c	\
+			$(SRCDEST)gameplay/get_input.c				\
+			$(SRCDEST)gameplay/sokoban.c				\
+			$(SRCDEST)end_game/free_resources.c
 
 MAIN	=	./main.c
 

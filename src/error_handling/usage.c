@@ -18,9 +18,3 @@ void usage(void)
     write(1, "     ‘P’ for the player, ‘X’ for boxes", 45);
     write(1, " and ‘O’ for storage locations.\n", 36);
 }
-
-void error_handler(void)
-{
-    usage();
-    exit(84);
-}
