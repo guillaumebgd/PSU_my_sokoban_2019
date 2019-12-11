@@ -5,9 +5,14 @@
 ## compiles c files with libs and includes to make the sokoban project
 ##
 
-SRCDEST	=	./src
+SRCDEST	=	./src/
 
-SRC		=	$(wildcard $(SRCDEST)/*.c)
+SRC		=	$(SRCDEST)init_map_stats.c				\
+			$(SRCDEST)usage.c						\
+			$(SRCDEST)get_map.c						\
+			$(SRCDEST)impossible_games.c			\
+			$(SRCDEST)sokoban.c						\
+			$(SRCDEST)free_resources.c
 
 MAIN	=	./main.c
 
