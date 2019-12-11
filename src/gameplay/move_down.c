@@ -10,7 +10,10 @@
 
 static void basic_down(map_stats_t *map_stats, int x, int y)
 {
-    if (map_stats->obs_pos[y][x] == 'O' || map_stats->map[y + 1][x] == ' ')
+    if (map_stats->obs_pos[y][x] == 'O') {
+        map_stats->map[y + 1][x] = 'P';
+        map_stats->map[y][x] = 'O';
+    } else if (map_stats->map[y + 1][x] == ' ')
         swap_char(&map_stats->map[y + 1][x], &map_stats->map[y][x]);
     else if (map_stats->map[y + 1][x] == 'O') {
         map_stats->map[y + 1][x] = 'P';
