@@ -5,14 +5,9 @@
 ## compiles c files with libs and includes to make the sokoban project
 ##
 
-SRC		=	./src/usage.c				\
-			./src/init_map_stats.c		\
-			./src/get_map.c				\
-			./src/impossible_games.c	\
-			./src/sokoban.c				\
-			./src/free_resources.c
+SRC		=	$(wildcard src/*.c)
 
-MAIN	=	./src/main.c
+MAIN	=	./main.c
 
 CFLAGS	=	-Wall -Wextra -I./include/
 
