@@ -13,7 +13,6 @@ void sokoban(map_stats_t *map_stats)
 {
     int close = 0;
     int i = 0;
-    int key;
 
     initscr();
     curs_set(FALSE);
@@ -23,19 +22,14 @@ void sokoban(map_stats_t *map_stats)
             printw(map_stats->map[i]);
             i += 1;
         }
-        key = getch();
-        switch (key) {
+        switch (getch()) {
             case KEY_UP:
-                printf("up\n");
                 break;
             case KEY_DOWN:
-                printf("down\n");
                 break;
             case KEY_LEFT:
-                printf("left\n");
                 break;
             case KEY_RIGHT:
-                printf("right\n");
                 break;
             case ' ':
                 close = 1;
