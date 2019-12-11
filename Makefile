@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2019
 ## Makefile my_sokoban
 ## File description:
-## compiles c files into a lib
+## compiles c files with libs and includes to make the sokoban project
 ##
 
 SRC		=	./src/usage.c				\
