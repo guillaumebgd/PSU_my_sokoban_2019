@@ -68,7 +68,7 @@ tests_run: libs
 
 coverage:
 	gcovr --exclude tests/
-	#gcovr --exclude tests/ --branches
+	gcovr --exclude tests/ --branches
 
 clean:
 	$(RM) $(OBJ)
