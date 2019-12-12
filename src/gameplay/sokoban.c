@@ -5,7 +5,7 @@
 ** mimics the game sokoban
 */
 
-#include <curses.h>
+#include <ncurses.h>
 #include "sokoban.h"
 #include "my.h"
 
@@ -19,10 +19,10 @@ static void print_map(map_stats_t *map_stats)
     }
 }
 
-static void display_map(map_stats_t *map_stats, int *close)
+static void display_map(map_stats_t *map_stats, int *close, int key)
 {
     print_map(map_stats);
-    get_input(map_stats, close);
+    get_input(map_stats, close, key);
 }
 
 static void cmp_holes_with_matches(int matches,
@@ -60,15 +60,17 @@ static void check_win(map_stats_t *map_stats, int *close)
 void sokoban(map_stats_t *map_stats)
 {
     int close = 0;
+    int key;
 
     initscr();
     curs_set(FALSE);
     keypad(stdscr, TRUE);
     while (close == 0) {
-        display_map(map_stats, &close);
+        key = getch();
+        display_map(map_stats, &close, key);
         check_win(map_stats, &close);
     }
-    display_map(map_stats, &close);
+    display_map(map_stats, &close, key);
     print_map(map_stats);
     refresh();
     endwin();

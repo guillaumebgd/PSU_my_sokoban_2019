@@ -9,13 +9,10 @@ SRCDEST	=	./src/
 
 LIBMY	=	./lib/my/
 
-TESTDIR	=	./tests/
-
 VALTEST	=	./big_map
 
 SRC		=	$(SRCDEST)get_map_cases/init_map_stats.c	\
 			$(SRCDEST)error_handling/usage.c			\
-			$(SRCDEST)error_handling/error_handler.c	\
 			$(SRCDEST)get_map_cases/allocate_maps.c		\
 			$(SRCDEST)get_map_cases/get_map.c			\
 			$(SRCDEST)error_handling/impossible_games.c	\
@@ -64,14 +61,14 @@ valgrind: libs ccsymb
 
 tests_run: libs
 	$(RM) *.gcda *.gcno
-	$(CC) -o unit_tests $(SRC) $(TESTDIR)*.c -L$(LIBMY) $(CRIT) $(CFLAGS)
+	$(CC) -o unit_tests $(SRC) ./tests/*.c -L$(LIBMY) $(LDFLAGS) $(CRIT) $(CFLAGS)
 	./unit_tests
 	$(RM) unit_tests
 	$(RM) test_*
 
 coverage:
-	gcovr --exclude $(TESTDIR)
-	gcovr --exclude $(TESTDIR) --branches
+	gcovr --exclude tests/
+	#gcovr --exclude tests/ --branches
 
 clean:
 	$(RM) $(OBJ)

@@ -8,9 +8,15 @@
 #include "sokoban.h"
 #include <curses.h>
 
-void get_input(map_stats_t *map_stats, int *close)
+static void restart(int *close)
 {
-    switch (getch()) {
+    (*close) = 1;
+    clear();
+}
+
+void get_input(map_stats_t *map_stats, int *close, int key)
+{
+    switch (key) {
         case KEY_UP:
             move_up(map_stats);
             break;
@@ -24,8 +30,7 @@ void get_input(map_stats_t *map_stats, int *close)
             move_right(map_stats);
             break;
         case ' ':
-            (*close) = 1;
-            clear();
+            restart(close);
             break;
         default:
             clear();

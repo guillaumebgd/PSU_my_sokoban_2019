@@ -50,23 +50,25 @@ static void get_final_map(char *first_map, map_stats_t *map_stats)
     }
 }
 
-void get_map(char const *map_path, map_stats_t *map_stats)
+int get_map(char const *map_path, map_stats_t *map_stats)
 {
-    char *first_map;
+    char *first_map = NULL;
     struct stat file_stat;
     int map_size = 0;
     int fd;
 
     fd = open(map_path, O_RDONLY);
     if (fd == -1)
-        error_handler();
+        return (84);
     if (stat(map_path, &file_stat) < 0)
-        error_handler();
+        return (84);
     first_map = malloc(sizeof(char) * (file_stat.st_size + 1));
     if (first_map == NULL)
-        error_handler();
+        return (84);
     map_size = read(fd, first_map, file_stat.st_size);
     first_map[map_size] = '\0';
-    check_map_and_lines(first_map, &map_stats->map_lines);
+    if (check_map_and_lines(first_map, &map_stats->map_lines) == 84)
+        return (84);
     get_final_map(first_map, map_stats);
+    return (0);
 }
