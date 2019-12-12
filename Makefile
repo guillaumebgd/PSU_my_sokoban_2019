@@ -5,63 +5,46 @@
 ## compiles c files with libs and includes to make the sokoban project
 ##
 
-SRCDEST	=	./src/
-
-LIBMY	=	./lib/my/
-
-VALTEST	=	./big_map
-
-SRC		=	$(SRCDEST)get_map_cases/init_map_stats.c	\
-			$(SRCDEST)error_handling/usage.c			\
-			$(SRCDEST)get_map_cases/allocate_maps.c		\
-			$(SRCDEST)get_map_cases/get_map.c			\
-			$(SRCDEST)error_handling/impossible_games.c	\
-			$(SRCDEST)gameplay/get_input.c				\
-			$(SRCDEST)gameplay/swap_char.c				\
-			$(SRCDEST)gameplay/move_left.c				\
-			$(SRCDEST)gameplay/move_right.c				\
-			$(SRCDEST)gameplay/move_up.c				\
-			$(SRCDEST)gameplay/move_down.c				\
-			$(SRCDEST)gameplay/sokoban.c				\
-			$(SRCDEST)end_game/free_resources.c
+SRC		=	./src/get_map_cases/init_map_stats.c	\
+			./src/error_handling/usage.c			\
+			./src/get_map_cases/allocate_maps.c		\
+			./src/get_map_cases/get_map.c			\
+			./src/error_handling/impossible_games.c	\
+			./src/gameplay/get_input.c				\
+			./src/gameplay/swap_char.c				\
+			./src/gameplay/move_left.c				\
+			./src/gameplay/move_right.c				\
+			./src/gameplay/move_up.c				\
+			./src/gameplay/move_down.c				\
+			./src/gameplay/sokoban.c				\
+			./src/end_game/free_resources.c
 
 MAIN	=	./main.c
 
 CFLAGS	=	-Wall -Wextra -I./include/
 
-SYMB	=	$(CFLAGS) -g
-
 NAME	=	my_sokoban
 
-LDFLAGS	=	-lmy -lncurses
+LIB		=	-L./lib/my/ -lmy -lncurses
 
 CRIT	=	--coverage -lcriterion
 
-libs:
-	$(MAKE) -C $(LIBMY)
-
-cc:
-	$(CC) -o $(NAME) $(MAIN) $(SRC) -L$(LIBMY) $(LDFLAGS) $(CFLAGS)
-
-ccsymb:
-	$(CC) -o $(NAME) $(MAIN) $(SRC) -L$(LIBMY) $(LDFLAGS) $(SYMB)
-
 all:	$(NAME)
 
-$(NAME): libs cc
+$(NAME):
+	$(MAKE) -C ./lib/my/
+	$(CC) -o $(NAME) $(MAIN) $(SRC) $(LIB) $(CFLAGS)
 
-debug: libs ccsymb
+debug:
+	$(MAKE) -C ./lib/my/
+	$(CC) -o $(NAME) $(MAIN) $(SRC) $(LIB) $(CFLAGS) -g
 	gdb $(NAME)
 	$(RM) $(NAME)
 
-valgrind: libs ccsymb
-	valgrind ./$(NAME) $(VALTEST)
-	$(RM) $(NAME)
-	$(RM) vgcore*
-
-tests_run: libs
+tests_run:
+	$(MAKE) -C ./lib/my/
 	$(RM) *.gcda *.gcno
-	$(CC) -o unit_tests $(SRC) ./tests/*.c -L$(LIBMY) $(LDFLAGS) $(CRIT) $(CFLAGS)
+	$(CC) -o unit_tests $(SRC) tests/*.c $(LIB) $(CRIT) $(CFLAGS)
 	./unit_tests
 	$(RM) unit_tests
 	$(RM) test_*
@@ -72,15 +55,15 @@ coverage:
 
 clean:
 	$(RM) $(OBJ)
-	$(RM) *.gcda *.gcno
-	$(RM) vgcore*
+	$(RM) *.gc*
 	$(RM) unit_tests
 
 fclean:	clean
 	$(RM) $(NAME)
-	$(RM) $(LIBMY)*.o
-	$(RM) $(LIBMY)*.a
+	$(RM) ./lib/my/*.o
+	$(RM) ./lib/my/*.a
 
 re:	fclean all
 
-.PHONY: libs cc ccsymb all debug tests_run coverage clean fclean re
+.PHONY: all debug tests_run coverage clean fclean re
+

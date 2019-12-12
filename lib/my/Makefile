@@ -7,7 +7,7 @@
 
 SRC	=	./my_strlen.c
 
-CFLAGS	=	-Wall -Wextra -Werror -I./../../include/
+CFLAGS	=	-Wall -Wextra -I./../../include/
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -19,9 +19,9 @@ $(NAME):	$(OBJ)
 	ar rc $(NAME) *.o
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean:	clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re:	fclean all
