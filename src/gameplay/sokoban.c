@@ -60,17 +60,15 @@ static void check_win(map_stats_t *map_stats, int *close)
 void sokoban(map_stats_t *map_stats)
 {
     int close = 0;
-    int key;
 
     initscr();
     curs_set(FALSE);
     keypad(stdscr, TRUE);
     while (close == 0) {
-        key = getch();
-        display_map(map_stats, &close, key);
+        display_map(map_stats, &close, getch());
         check_win(map_stats, &close);
     }
-    display_map(map_stats, &close, key);
+    display_map(map_stats, &close, getch());
     print_map(map_stats);
     refresh();
     endwin();
