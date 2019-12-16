@@ -24,6 +24,8 @@ int get_map(char const *, map_stats_t *);
 int allocate_maps(char *, map_stats_t *);
 int check_map_and_lines(char *, int *);
 
+int game_handler(map_stats_t , char **);
+
 void sokoban(map_stats_t *);
 void print_map(map_stats_t *);
 void check_win(map_stats_t *, int *);

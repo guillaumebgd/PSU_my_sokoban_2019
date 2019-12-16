@@ -5,7 +5,8 @@
 ## compiles c files with libs and includes to make the sokoban project
 ##
 
-SRC		=	./src/get_map_from_file/init_map_stats.c	\
+SRC		=	./src/gameplay/game_handler.c				\
+			./src/get_map_from_file/init_map_stats.c	\
 			./src/get_map_from_file/get_map.c			\
 			./src/get_map_from_file/allocate_maps.c		\
 			./src/gameplay/sokoban.c					\
