@@ -15,6 +15,7 @@ typedef struct map_stats_s {
     int *player_pos;
     int map_lines;
     int game_res;
+    int longest_line;
 } map_stats_t;
 
 int init_map_stats(map_stats_t *);

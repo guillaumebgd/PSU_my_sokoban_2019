@@ -9,6 +9,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+static void get_longest_line(int *longest_line, int size)
+{
+    if ((*longest_line) < size)
+        (*longest_line) = size;
+}
+
 static int alloc_whole_maps(map_stats_t *map_stats)
 {
     map_stats->map = malloc(sizeof(char *) * (map_stats->map_lines));
@@ -26,6 +32,7 @@ static int alloc_lines(map_stats_t *map_stats, int lines, int size)
         return (84);
     map_stats->obs_pos[lines][size + 1] = '\0';
     map_stats->map[lines][size + 1] = '\0';
+    get_longest_line(&map_stats->longest_line, size);
     return (0);
 }
 
