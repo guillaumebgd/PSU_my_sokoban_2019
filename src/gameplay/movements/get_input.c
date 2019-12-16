@@ -8,8 +8,9 @@
 #include "sokoban.h"
 #include <curses.h>
 
-static void restart(int *close)
+static void restart(map_stats_t *map_stats, int *close)
 {
+    map_stats->game_res = 2;
     (*close) = 1;
     clear();
 }
@@ -29,5 +30,5 @@ void get_input(map_stats_t *map_stats, int *close, int key)
         move_right(map_stats);
         clear();
     } if (key == ' ')
-        restart(close);
+        restart(map_stats, close);
 }
