@@ -13,13 +13,18 @@ static void basic_left(map_stats_t *map_stats, int x, int y)
     if (map_stats->obs_pos[y][x] == 'O') {
         map_stats->map[y][x - 1] = 'P';
         map_stats->map[y][x] = 'O';
-    } else if (map_stats->map[y][x - 1] == ' ')
+        map_stats->player_pos[0] -= 1;
+        return;
+    } if (map_stats->map[y][x - 1] == ' ') {
         swap_char(&map_stats->map[y][x - 1], &map_stats->map[y][x]);
-    else if (map_stats->map[y][x - 1] == 'O') {
+        map_stats->player_pos[0] -= 1;
+        return;
+    } if (map_stats->map[y][x - 1] == 'O') {
         map_stats->map[y][x - 1] = 'P';
         map_stats->map[y][x] = ' ';
+        map_stats->player_pos[0] -= 1;
+        return;
     }
-    map_stats->player_pos[0] -= 1;
 }
 
 static void box_pushed_or_not(map_stats_t *map_stats, int x, int y)
