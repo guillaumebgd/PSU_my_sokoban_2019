@@ -16,24 +16,18 @@ static void restart(int *close)
 
 void get_input(map_stats_t *map_stats, int *close, int key)
 {
-    switch (key) {
-        case KEY_UP:
-            move_up(map_stats);
-            break;
-        case KEY_DOWN:
-            move_down(map_stats);
-            break;
-        case KEY_LEFT:
-            move_left(map_stats);
-            break;
-        case KEY_RIGHT:
-            move_right(map_stats);
-            break;
-        case ' ':
-            restart(close);
-            break;
-        default:
-            clear();
-            break;
-    }
+    if (key == KEY_UP) {
+        move_up(map_stats);
+        clear();
+    } if (key == KEY_DOWN) {
+        move_down(map_stats);
+        clear();
+    } if (key == KEY_LEFT) {
+        move_left(map_stats);
+        clear();
+    } if (key == KEY_RIGHT) {
+        move_right(map_stats);
+        clear();
+    } if (key == ' ')
+        restart(close);
 }

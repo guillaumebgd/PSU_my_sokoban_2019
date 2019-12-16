@@ -49,5 +49,4 @@ void move_right(map_stats_t *map_stats)
         if (map_stats->map[y][x + 2] != '#' && map_stats->map[y][x + 2] != 'X')
             box_pushed_or_not(map_stats, x, y);
     }
-    clear();
 }
