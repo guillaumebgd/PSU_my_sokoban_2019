@@ -12,8 +12,6 @@
 
 int main(int ac, char **av, char **env)
 {
-    map_stats_t map_stats;
-
     if (ac != 2 || env[0] == NULL) {
         usage();
         return (84);
@@ -21,5 +19,5 @@ int main(int ac, char **av, char **env)
         usage();
         return (0);
     }
-    return (game_handler(map_stats, av));
+    return (game_handler(av));
 }

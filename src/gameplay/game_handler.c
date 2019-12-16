@@ -10,8 +10,10 @@
 #include "sokoban.h"
 #include "my.h"
 
-int game_handler(map_stats_t map_stats, char **av)
+int game_handler(char **av)
 {
+    map_stats_t map_stats;
+
     while (1) {
         if (init_map_stats(&map_stats) == 84)
             return (84);
