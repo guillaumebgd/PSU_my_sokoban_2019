@@ -24,7 +24,7 @@ void sokoban(map_stats_t *map_stats)
         get_input(map_stats, &close, getch());
     }
     print_map(map_stats);
-    usleep(100000);
+    usleep(500);
     refresh();
     endwin();
 }
