@@ -16,5 +16,6 @@ int init_map_stats(map_stats_t *map_stats)
     if (map_stats->player_pos == NULL)
         return (84);
     map_stats->map_lines = 0;
+    map_stats->game_res = 0;
     return (0);
 }

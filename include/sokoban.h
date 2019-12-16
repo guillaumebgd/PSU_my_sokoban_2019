@@ -14,6 +14,7 @@ typedef struct map_stats_s {
     char **obs_pos;
     int *player_pos;
     int map_lines;
+    int game_res;
 } map_stats_t;
 
 int init_map_stats(map_stats_t *);
@@ -23,6 +24,8 @@ int allocate_maps(char *, map_stats_t *);
 int check_map_and_lines(char *, int *);
 
 void sokoban(map_stats_t *);
+void print_map(map_stats_t *);
+void check_win(map_stats_t *, int *);
 void get_input(map_stats_t *, int *, int);
 
 void swap_char(char *, char *);

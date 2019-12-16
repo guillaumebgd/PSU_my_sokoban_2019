@@ -28,5 +28,5 @@ int main(int ac, char **av, char **env)
     }
     sokoban(&map_stats);
     free_resources(map_stats);
-    return (0);
+    return (map_stats.game_res);
 }

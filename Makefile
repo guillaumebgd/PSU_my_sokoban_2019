@@ -5,19 +5,21 @@
 ## compiles c files with libs and includes to make the sokoban project
 ##
 
-SRC		=	./src/get_map_cases/init_map_stats.c	\
-			./src/error_handling/usage.c			\
-			./src/get_map_cases/allocate_maps.c		\
-			./src/get_map_cases/get_map.c			\
-			./src/error_handling/impossible_games.c	\
-			./src/gameplay/get_input.c				\
-			./src/gameplay/swap_char.c				\
-			./src/gameplay/move_left.c				\
-			./src/gameplay/move_right.c				\
-			./src/gameplay/move_up.c				\
-			./src/gameplay/move_down.c				\
-			./src/gameplay/sokoban.c				\
-			./src/end_game/free_resources.c
+SRC		=	./src/get_map_from_file/init_map_stats.c	\
+			./src/get_map_from_file/get_map.c			\
+			./src/get_map_from_file/allocate_maps.c		\
+			./src/gameplay/sokoban.c					\
+			./src/error_handling/impossible_games.c		\
+			./src/error_handling/usage.c				\
+			./src/gameplay/print_map/print_map.c		\
+			./src/gameplay/movements/get_input.c		\
+			./src/gameplay/movements/swap_char.c		\
+			./src/gameplay/movements/move_left.c		\
+			./src/gameplay/movements/move_right.c		\
+			./src/gameplay/movements/move_up.c			\
+			./src/gameplay/movements/move_down.c		\
+			./src/gameplay/end_game/win_condition.c		\
+			./src/gameplay/end_game/free_resources.c
 
 MAIN	=	./main.c
 
