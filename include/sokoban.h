@@ -16,19 +16,21 @@ typedef struct map_stats_s {
     int map_lines;
     int game_res;
     int longest_line;
+    int boxes_nb;
 } map_stats_t;
 
 int init_map_stats(map_stats_t *);
 
 int get_map(char const *, map_stats_t *);
 int allocate_maps(char *, map_stats_t *);
-int check_map_and_lines(char *, int *);
+int check_map_and_lines(map_stats_t *, char *, int *);
 
 int game_handler(char **);
 
 void sokoban(map_stats_t *);
 void print_map(map_stats_t *);
 void check_win(map_stats_t *, int *);
+void check_lose(map_stats_t *, int *);
 void get_input(map_stats_t *, int *, int);
 
 void swap_char(char *, char *);

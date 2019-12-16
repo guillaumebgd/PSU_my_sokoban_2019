@@ -18,5 +18,6 @@ int init_map_stats(map_stats_t *map_stats)
     map_stats->map_lines = 0;
     map_stats->game_res = 0;
     map_stats->longest_line = 0;
+    map_stats->boxes_nb = 0;
     return (0);
 }

@@ -20,6 +20,7 @@ SRC		=	./src/gameplay/game_handler.c				\
 			./src/gameplay/movements/move_up.c			\
 			./src/gameplay/movements/move_down.c		\
 			./src/gameplay/end_game/win_condition.c		\
+			./src/gameplay/end_game/lose_condition.c	\
 			./src/gameplay/end_game/free_resources.c
 
 MAIN	=	./main.c

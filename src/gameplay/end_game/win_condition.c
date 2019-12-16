@@ -17,10 +17,10 @@ static void cmp_holes_with_matches(int matches,
 
 void check_win(map_stats_t *map_stats, int *close)
 {
-    int holes = 0;
-    int matches = 0;
     int x = 0;
     int y = 0;
+    int holes = 0;
+    int matches = 0;
 
     while (y < map_stats->map_lines) {
         if (map_stats->obs_pos[y][x] == 'O') {

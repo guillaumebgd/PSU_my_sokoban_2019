@@ -21,6 +21,8 @@ void sokoban(map_stats_t *map_stats)
     while (close == 0) {
         print_map(map_stats);
         check_win(map_stats, &close);
+        if (close == 0)
+            check_lose(map_stats, &close);
         get_input(map_stats, &close, getch());
     }
     print_map(map_stats);

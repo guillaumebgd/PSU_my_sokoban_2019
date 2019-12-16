@@ -25,7 +25,7 @@ static void count_objects(char c, int *player, int *boxes, int *holes)
         (*holes) += 1;
 }
 
-int check_map_and_lines(char *map, int *map_lines)
+int check_map_and_lines(map_stats_t *map_stats, char *map, int *map_lines)
 {
     int count_player = 0;
     int count_boxes = 0;
@@ -45,5 +45,6 @@ int check_map_and_lines(char *map, int *map_lines)
     }
     if (check_objects_count(count_player, count_boxes, count_holes) == 84)
         return (84);
+    map_stats->boxes_nb = count_boxes;
     return (0);
 }
