@@ -1,0 +1,32 @@
+/*
+** EPITECH PROJECT, 2019
+** my_sokoban
+** File description:
+** tests move left function
+*/
+
+#include "sokoban.h"
+#include "ncurses.h"
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+Test(check_win, all_holes_filled)
+{
+    map_stats_t map_stats;
+    int close = 0;
+
+    init_map_stats(&map_stats);
+    get_map("./tests/tests_files/win_conditions/easy_win", &map_stats);
+    move_down(&map_stats);
+    move_right(&map_stats);
+    check_win(&map_stats, &close);
+    if (map_stats.game_res == 0 && close == 1)
+        cr_expect_eq(1, 1);
+    else
+        cr_expect_eq(1, 0);
+    free_resources(map_stats);
+}
