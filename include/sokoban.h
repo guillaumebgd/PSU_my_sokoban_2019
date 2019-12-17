@@ -19,6 +19,11 @@ typedef struct map_stats_s {
     int boxes_nb;
 } map_stats_t;
 
+typedef struct poin_s {
+    int x;
+    int y;
+} point_t;
+
 int init_map_stats(map_stats_t *);
 
 int get_map(char const *, map_stats_t *);

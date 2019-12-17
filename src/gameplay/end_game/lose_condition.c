@@ -18,36 +18,48 @@ static void cmp_unmov_with_boxes(map_stats_t *map_stats,
     }
 }
 
+static int check_for_nearby_char(map_stats_t *map_stats,
+                                point_t box,
+                                char first_c,
+                                char second_c)
+{
+    if ((map_stats->map[box.y][box.x + 1] == first_c
+        && (map_stats->map[box.y + 1][box.x] == second_c
+        || map_stats->map[box.y - 1][box.x] == second_c))
+        || (map_stats->map[box.y][box.x - 1] == first_c
+        && (map_stats->map[box.y + 1][box.x] == second_c
+        || map_stats->map[box.y - 1][box.x] == second_c)))
+        return (0);
+    else
+        return (1);
+}
+
 static void check_unmoveable(map_stats_t *map_stats,
-                            int x,
-                            int y,
+                            point_t box,
                             int *unmoveable)
 {
-    if (((map_stats->map[y][x + 1] == 'X' && (map_stats->map[y + 1][x] == 'X'
-        || map_stats->map[y - 1][x] == 'X'))
-        || (map_stats->map[y][x - 1] == 'X' && (map_stats->map[y + 1][x] == 'X'
-        || map_stats->map[y - 1][x] == 'X')))
-        || ((map_stats->map[y][x + 1] == '#' && (map_stats->map[y + 1][x] == '#'
-        || map_stats->map[y - 1][x] == '#'))
-        || (map_stats->map[y][x - 1] == '#' && (map_stats->map[y + 1][x] == '#'
-        || map_stats->map[y - 1][x] == '#'))))
+    if (check_for_nearby_char(map_stats, box, 'X', 'X') == 0
+        || check_for_nearby_char(map_stats, box, '#', '#') == 0
+        || check_for_nearby_char(map_stats, box, 'X', '#') == 0
+        || check_for_nearby_char(map_stats, box, '#', 'X') == 0)
         (*unmoveable) += 1;
 }
 
 void check_lose(map_stats_t *map_stats, int *close)
 {
-    int x = 0;
-    int y = 0;
+    point_t box;
     int unmoveable = 0;
 
-    while (y < map_stats->map_lines) {
-        if (map_stats->map[y][x] == 'X')
-            check_unmoveable(map_stats, x, y, &unmoveable);
-        if (map_stats->obs_pos[y][x] == '\n') {
-            y += 1;
-            x = 0;
+    box.x = 0;
+    box.y = 0;
+    while (box.y < map_stats->map_lines) {
+        if (map_stats->map[box.y][box.x] == 'X')
+            check_unmoveable(map_stats, box, &unmoveable);
+        if (map_stats->obs_pos[box.y][box.x] == '\n') {
+            box.y += 1;
+            box.x = 0;
         }
-        x += 1;
+        box.x += 1;
     }
     cmp_unmov_with_boxes(map_stats, unmoveable, close);
 }
