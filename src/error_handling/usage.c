@@ -2,11 +2,10 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** prints the usage of the my_sokoban function onto the terminal
 */
 
 #include <unistd.h>
-#include <stdlib.h>
 
 void usage(void)
 {

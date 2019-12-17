@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** allocates memory space for each lines of the map
 */
 
 #include "sokoban.h"

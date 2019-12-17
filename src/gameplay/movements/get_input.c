@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** redirects the key input towards the correct function
 */
 
 #include "sokoban.h"
-#include <curses.h>
+#include <ncurses.h>
 
 static void restart(map_stats_t *map_stats, int *close)
 {

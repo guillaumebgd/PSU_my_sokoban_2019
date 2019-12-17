@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** initializes values of map_stats struct
 */
 
 #include "sokoban.h"

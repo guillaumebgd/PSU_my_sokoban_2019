@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** gets the map from the pathway given as argument
 */
 
 #include "sokoban.h"

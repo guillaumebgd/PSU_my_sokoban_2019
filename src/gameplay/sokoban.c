@@ -2,13 +2,12 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** main control of what happens in the window
 */
 
+#include "sokoban.h"
 #include <ncurses.h>
 #include <unistd.h>
-#include "sokoban.h"
-#include "my.h"
 
 void sokoban(map_stats_t *map_stats)
 {

@@ -2,13 +2,12 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** handles the window actions
 */
 
+#include "sokoban.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include "sokoban.h"
-#include "my.h"
 
 int game_handler(char **av)
 {

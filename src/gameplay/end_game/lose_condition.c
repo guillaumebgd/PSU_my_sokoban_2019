@@ -2,10 +2,9 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** checks if the game is lost
 */
 
-#include <stdlib.h>
 #include "sokoban.h"
 
 static void cmp_unmov_with_boxes(map_stats_t *map_stats,

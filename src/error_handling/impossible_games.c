@@ -2,10 +2,9 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** checks if a map is valid
 */
 
-#include <stdlib.h>
 #include "sokoban.h"
 
 static int check_objects_count(int player, int boxes, int holes)

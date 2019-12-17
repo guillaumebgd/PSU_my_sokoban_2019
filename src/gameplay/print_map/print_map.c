@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** prints the map onto the terminal
 */
 
 #include <ncurses.h>

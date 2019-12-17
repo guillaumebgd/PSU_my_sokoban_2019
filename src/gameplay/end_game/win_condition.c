@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** checks if the game is won
 */
 
 #include "sokoban.h"

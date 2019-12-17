@@ -2,11 +2,10 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** moves the player to the left
 */
 
 #include "sokoban.h"
-#include <curses.h>
 
 static void basic_left(map_stats_t *map_stats, int x, int y)
 {

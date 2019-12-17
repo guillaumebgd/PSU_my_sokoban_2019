@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** mimics the game sokoban
+** frees resources allocated
 */
 
-#include <stdlib.h>
 #include "sokoban.h"
+#include <stdlib.h>
 
 void free_resources(map_stats_t map_stats)
 {
