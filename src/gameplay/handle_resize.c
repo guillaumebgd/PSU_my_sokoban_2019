@@ -14,7 +14,7 @@ void handle_resize(map_stats_t *map_stats)
             || LINES < map_stats->map_lines) {
                 clear();
                 mvprintw(LINES / 2, COLS / 2 - 13,
-                "Resize the window to play.");
+                "Enlarge the window to play");
                 refresh();
             }
 }
