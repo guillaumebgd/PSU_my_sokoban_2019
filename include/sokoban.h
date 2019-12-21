@@ -33,6 +33,7 @@ int check_map_and_lines(map_stats_t *, char *, int *);
 int game_handler(char **);
 
 void sokoban(map_stats_t *);
+void handle_resize(map_stats_t *);
 void print_map(map_stats_t *);
 void check_win(map_stats_t *, int *);
 void check_lose(map_stats_t *, int *);

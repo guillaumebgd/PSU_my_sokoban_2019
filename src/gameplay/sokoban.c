@@ -18,6 +18,7 @@ void sokoban(map_stats_t *map_stats)
     curs_set(FALSE);
     keypad(stdscr, TRUE);
     while (close == 0) {
+        handle_resize(map_stats);
         print_map(map_stats);
         check_win(map_stats, &close);
         if (close == 0)

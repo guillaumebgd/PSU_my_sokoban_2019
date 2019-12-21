@@ -12,6 +12,7 @@ SRC		=	./src/gameplay/game_handler.c				\
 			./src/gameplay/sokoban.c					\
 			./src/error_handling/impossible_games.c		\
 			./src/error_handling/usage.c				\
+			./src/gameplay/handle_resize.c				\
 			./src/gameplay/print_map/print_map.c		\
 			./src/gameplay/movements/get_input.c		\
 			./src/gameplay/movements/swap_char.c		\
