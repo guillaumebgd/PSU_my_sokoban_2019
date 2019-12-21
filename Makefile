@@ -40,6 +40,10 @@ $(NAME):
 	$(MAKE) -C ./lib/my/
 	$(CC) -o $(NAME) $(MAIN) $(SRC) $(LIB) $(CFLAGS)
 
+symbolic:
+	$(MAKE) -C ./lib/my/
+	$(CC) -o $(NAME) $(MAIN) $(SRC) $(LIB) $(CFLAGS) -g
+
 debug:
 	$(MAKE) -C ./lib/my/
 	$(CC) -o $(NAME) $(MAIN) $(SRC) $(LIB) $(CFLAGS) -g
@@ -70,5 +74,5 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY: all debug tests_run coverage clean fclean re
+.PHONY: all symbolic debug tests_run coverage clean fclean re
 
