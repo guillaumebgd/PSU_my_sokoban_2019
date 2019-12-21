@@ -2,17 +2,11 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** tests move left function
+** tests special cases of the move left function
 */
 
 #include "sokoban.h"
-#include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 Test(move_left, map_left_simple_box_move_on_hole)
 {

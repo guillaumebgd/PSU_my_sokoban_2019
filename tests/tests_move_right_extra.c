@@ -2,17 +2,12 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** tests move left function
+** tests special cases of the move right function
 */
 
 #include "sokoban.h"
-#include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
+
 
 Test(move_right, map_right_obs_player_cover)
 {

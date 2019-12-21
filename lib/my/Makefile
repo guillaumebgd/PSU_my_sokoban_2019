@@ -5,7 +5,8 @@
 ## makefile for lib
 ##
 
-SRC	=	./my_strlen.c
+SRC	=	./my_strlen.c	\
+		./my_strcpy.c
 
 CFLAGS	=	-Wall -Wextra -I./../../include/
 

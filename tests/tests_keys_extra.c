@@ -2,17 +2,12 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** tests move left function
+** tests an input that should do nothing
 */
 
 #include "sokoban.h"
 #include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 Test(get_input, classic_reflesh_if_any_other_key_pressed)
 {

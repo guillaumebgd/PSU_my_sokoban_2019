@@ -7,10 +7,9 @@
 
 #include "sokoban.h"
 #include <sys/stat.h>
-#include <sys/types.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 static void get_player_pos(char c, map_stats_t *map_stats, int x, int y)
 {
@@ -67,7 +66,7 @@ int get_map(char const *map_path, map_stats_t *map_stats)
         return (84);
     map_size = read(fd, first_map, file_stat.st_size);
     first_map[map_size] = '\0';
-    if (check_map_and_lines(map_stats, first_map, &map_stats->map_lines) == 84)
+    if (check_map_and_lines(map_stats, &first_map, &map_stats->map_lines) == 84)
         return (84);
     get_final_map(first_map, map_stats);
     return (0);

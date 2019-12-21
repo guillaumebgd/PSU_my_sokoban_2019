@@ -2,17 +2,12 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** tests move left function
+** tests key inputs of the sokoban game
 */
 
 #include "sokoban.h"
 #include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 Test(move_left, left_by_key)
 {

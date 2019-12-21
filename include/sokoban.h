@@ -9,6 +9,12 @@
 
 #define SOKOBAN_H_
 
+typedef struct obj_count_s {
+    int count_player;
+    int count_boxes;
+    int count_holes;
+} obj_count_t;
+
 typedef struct map_stats_s {
     char **map;
     char **obs_pos;
@@ -19,7 +25,7 @@ typedef struct map_stats_s {
     int boxes_nb;
 } map_stats_t;
 
-typedef struct poin_s {
+typedef struct point_s {
     int x;
     int y;
 } point_t;
@@ -28,7 +34,7 @@ int init_map_stats(map_stats_t *);
 
 int get_map(char const *, map_stats_t *);
 int allocate_maps(char *, map_stats_t *);
-int check_map_and_lines(map_stats_t *, char *, int *);
+int check_map_and_lines(map_stats_t *, char **, int *);
 
 int game_handler(char **);
 

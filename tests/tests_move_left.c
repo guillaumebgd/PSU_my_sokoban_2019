@@ -6,13 +6,7 @@
 */
 
 #include "sokoban.h"
-#include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 Test(move_left, simple_left_move)
 {

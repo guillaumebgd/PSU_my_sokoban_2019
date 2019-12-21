@@ -2,17 +2,11 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** tests move left function
+** tests the sokoban winning condition
 */
 
 #include "sokoban.h"
-#include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 Test(check_win, all_holes_filled)
 {

@@ -2,17 +2,11 @@
 ** EPITECH PROJECT, 2019
 ** my_sokoban
 ** File description:
-** tests move left function
+** tests a lot of moves for a big map
 */
 
 #include "sokoban.h"
-#include "ncurses.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 static void solver_first_big_map(map_stats_t map_stats)
 {
