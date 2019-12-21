@@ -63,7 +63,6 @@ coverage:
 	gcovr --exclude tests/ --branches
 
 clean:
-	$(RM) $(OBJ)
 	$(RM) *.gc*
 	$(RM) unit_tests
 
